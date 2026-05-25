@@ -1,46 +1,38 @@
 package src;
-import java.util.Scanner;
-
 public class Invoice {
-    public String invno;
-    public String customer;
-    public int amount;
-    public int payment;
+    private String invoiceNum;
+    private int invoiceAmt;
+    private String customerName;
+    private int payment;
 
-    public void setInvno(String invno) {
-        this.invno = invno;
+    public void setInvNo(String invoiceNum) {
+        this.invoiceNum = invoiceNum;
     }
-
-    public void setCustomer(String customer) {
-        this.customer = customer;
+    public void setInvAmt(int invoiceAmt) {
+        this.invoiceAmt = invoiceAmt;
     }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setCustomer(String customerName) {
+        this.customerName = customerName;
     }
-
     public void setPayment(int payment) {
         this.payment = payment;
     }
 
-    public String getInvno() {
-        return invno;
+    public String getInvNum() {
+        return invoiceNum;
     }
-
+    public int getInvAmt() {
+        return invoiceAmt;
+    }
     public String getCustomer() {
-        return customer;
+        return customerName;
     }
-
-    public int getAmount() {
-        return amount;
-    }
-
     public int getPayment() {
         return payment;
     }
 
     public int calculateBalance() {
-        int balance = getAmount() - getPayment();
+        int balance = getInvAmt() - getPayment();
         return balance;
     }
 }
